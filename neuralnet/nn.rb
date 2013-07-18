@@ -1,7 +1,7 @@
 require 'csv'
 
 # Parameters
-NUM_ITERATION = 10
+NUM_ITERATION = 1000
 NUM_INPUT_DATA = 5
 NUM_INPUT_LAYER = 10
 NUM_HIDDEN_LAYER = 15
@@ -77,7 +77,7 @@ def sigmoid(val)
 end
 
 def sigmoid_diff(val)
-    return val*(1.0 - val)
+    return sigmoid(val)*(1.0 - sigmoid(val))
 end
 
 def output_layers_input(output_id, weight_hidden_output, hidden_layer)
@@ -177,4 +177,5 @@ NUM_ITERATION.times do |itr|
         end
         threshold_hidden[h] += LEARNING_RATE * sum
     end
+
 end
