@@ -1,10 +1,7 @@
 # I added "New" parts.
 # For other parts, please see the following AWS documtns: 
 # https://docs.aws.amazon.com/ja_jp/rekognition/latest/dg/video-analyzing-with-sqs.html
-# https://docs.aws.amazon.com/ja_jp/rekognition/latest/dg/faces-sqs-video.html
-
-#Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-#PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
+# https://docs.aws.amazon.com/ja_jp/rekognition/latest/dg/faces-sqs-video.html=
 
 import boto3
 import json
@@ -188,9 +185,6 @@ class VideoDetect:
     def DeleteTopicandQueue(self):
         self.sqs.delete_queue(QueueUrl=self.sqsQueueUrl)
         self.sns.delete_topic(TopicArn=self.snsTopicArn)
-
-#Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-#PDX-License-Identifier: MIT-0 (For details, see https://github.com/awsdocs/amazon-rekognition-developer-guide/blob/master/LICENSE-SAMPLECODE.)
 
     # ============== Faces===============
     def StartFaceDetection(self):
